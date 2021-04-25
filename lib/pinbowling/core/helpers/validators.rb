@@ -26,7 +26,7 @@ module Pinbowling
         def file_exists?
           file.gsub!("./", "")
           @abs_path = Dir.pwd + "/" + file
-          raise Error::MESSAGE[:invalid_file] unless !Dir[abs_path].blank?
+          raise Errors::MESSAGE[:invalid_file] unless !Dir[abs_path].blank?
         end
 
         def valid_number_of_throws
@@ -49,7 +49,7 @@ module Pinbowling
         end
 
         def is_valid_number?(num)
-          raise Error::MESSAGE[:invalid_knocked_pin_number] unless (0..10).include?(num)
+          raise Errors::MESSAGE[:invalid_knocked_pin_number] unless (0..10).include?(num)
         end
       end
     end
