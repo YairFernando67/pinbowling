@@ -7,11 +7,12 @@ module Pinbowling
       argument :file, type: :string, required: true, desc: ".txt File with the players and frame"
       def play
         @file = file
-
-        binding.pry
+        Core::Helpers::Validators.run(file)
         p "Game started"
         p @file
       end
+
+      attr_accessor :file
     end
   end
 end

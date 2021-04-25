@@ -5,7 +5,7 @@ module Pinbowling
 
         class << self
           def run(file)
-            i = new(file)
+            i = new(file.dup)
             i.perform
           end
         end
@@ -16,6 +16,7 @@ module Pinbowling
 
         def perform
           file_exists?
+          valid_number_of_throws
         end
 
         private
@@ -25,7 +26,7 @@ module Pinbowling
         def file_exists?
           file.gsub!("./", "")
           @abs_path = Dir.pwd + "/" + file
-          !Dir[abs_path].blank?
+          raise Error::MESSAGE[:invalid_file] unless !Dir[abs_path].blank?
         end
 
         def valid_number_of_throws
@@ -34,6 +35,7 @@ module Pinbowling
           hash = players.each.with_object({}) do |p, memo|
             record = p.split
             value = parse_record(record[1])
+            is_valid_number?(value)
             if memo[record[0]]
               memo[record[0]] << value
             else
@@ -43,7 +45,11 @@ module Pinbowling
         end
 
         def parse_record(record)
-          record == "F" ? 0, record.to_i
+          record == "F" ? 0 : record.to_i
+        end
+
+        def is_valid_number?(num)
+          raise Error::MESSAGE[:invalid_knocked_pin_number] unless (0..10).include?(num)
         end
       end
     end
