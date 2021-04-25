@@ -9,9 +9,7 @@ module Pinbowling
         @file = file
         @players = Core::Helpers::Validators.run(file)
         @score_table = Core::Score::Table.calculate(@players)
-        binding.pry
-        p "Game started"
-        p @file
+        Core::Out::Print.pretty(@score_table)
       end
 
       attr_accessor :file

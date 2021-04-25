@@ -3,7 +3,8 @@ module Pinbowling
     MESSAGE = {
       invalid_file: "Input file does not exists!!",
       invalid_knocked_pin_number: "Negative numbers nor greater than 10 for knocked down pins are not allowed",
-      invalid_players: "Unable to calculate score table without any players"
+      invalid_players: "Unable to calculate score table without any players",
+      invalid_score_table: "Unable to print the score table without any players"
     }
   end
 end
