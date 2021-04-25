@@ -17,7 +17,7 @@ module Pinbowling
               "support",
               "Support"
 
-    register Game::Start,
+    register Game::Module,
               "game",
               "game",
               "Pinbowling Game"

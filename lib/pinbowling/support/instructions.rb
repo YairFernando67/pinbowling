@@ -2,9 +2,9 @@ module Pinbowling
   module Support
     class Instructions < Thor
 
-      desc "how to play", "Start a new game"
-      method_option :flow, aliases: "f"
-      def flow
+      desc "play", "Instructions to start a new game"
+      method_option :play, aliases: "p"
+      def play
         p "To start a new game run the following command: pinbowling "
       end
     end
