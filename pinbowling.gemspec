@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rainbow"
   spec.add_dependency "thor"
   spec.add_dependency "zeitwerk"
+  spec.add_dependency "awesome_print"
 
   spec.add_development_dependency "aruba"
   spec.add_development_dependency "rake"

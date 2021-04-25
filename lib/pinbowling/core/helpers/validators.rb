@@ -31,8 +31,8 @@ module Pinbowling
 
         def valid_number_of_throws
           open_file = File.open(abs_path)
-          players = open_file.readlines.map(&:chomp).sort
-          hash = players.each.with_object({}) do |p, memo|
+          players = open_file.readlines.map(&:chomp)
+          players.each.with_object({}) do |p, memo|
             record = p.split
             value = parse_record(record[1])
             is_valid_number?(value)
