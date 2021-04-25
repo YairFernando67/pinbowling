@@ -6,6 +6,6 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "pinbowling"
 require 'pry'
 
-binding.pry
+# binding.pry
 
 Pinbowling::Main.start

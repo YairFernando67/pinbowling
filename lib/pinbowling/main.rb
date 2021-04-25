@@ -6,15 +6,20 @@ module Pinbowling
       true
     end
 
-    desc "version", "Show PinBowling version gem"
-    method_option :version, aliases: "-v"
+    desc "version | v", "Show PinBowling version gem"
+    method_option :version, aliases: "v"
     def version
       puts VERSION
     end
 
     register Support::Instructions,
-              "instructions",
-              "instructions",
-              "Start a new game"
+              "support",
+              "support",
+              "Support"
+
+    register Game::Start,
+              "game",
+              "game",
+              "Pinbowling Game"
   end
 end
