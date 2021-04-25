@@ -1,0 +1,68 @@
+require: rubocop-performance
+require: rubocop-md
+
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - "Rakefile"
+
+Style/MultilineBlockChain:
+  Enable: false
+
+Security/YAMLLoad:
+  Enabled: false
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+  ConsistentQuotesInMultiline: true
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+
+Style/Lambda:
+  EnforcedStyle: literal
+
+Layout/ParameterAlignment:
+  EnforcedStyle: with_fixed_indentation
+
+
+Layout/MultilineMethodCallIndentation:
+    EnforcedStyle: indented
+
+Metrics/BlockLength:
+  Exclude:
+    - "spec/**/*.rb"
+    - "db/migrate/*.rb"
+    - "*.gemspec"
+    - "lib/tasks/**/*.rake"
+
+Metrics/LineLength:
+  Max: 120
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: no_space
+
+Style/BracesAroundHashParameters:
+  EnforcedStyle: no_braces
+
+Metrics/AbcSize:
+  Max: 40
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - "spec/**/*.rb"
+    - "migrate/*.rb"
+    - "*.gemspec"
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - "spec/**/*"
