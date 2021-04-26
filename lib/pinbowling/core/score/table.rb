@@ -8,6 +8,8 @@ module Pinbowling
       # This class calculates the score_table based on the
       # players input
       class Table
+        class InvalidArgumentError < StandardError; end
+
         class << self
           def calculate(players)
             i = new(players)
@@ -56,7 +58,7 @@ module Pinbowling
         attr_accessor :players, :score_table, :game
 
         def validate!
-          raise Errors::MESSAGE[:invalid_players] if players.keys.empty?
+          raise InvalidArgumentError, "Unable to calculate score table without any players" if players.keys.empty?
         end
 
         def update_prev_score(val=nil)

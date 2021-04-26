@@ -8,6 +8,8 @@ module Pinbowling
       # Runs a set of validations over the file to see if the
       # content is valid.
       class Validators
+        class InvalidArgumentError < StandardError; end
+
         class << self
           def run(file)
             i = new(file.dup)
@@ -34,16 +36,16 @@ module Pinbowling
         def file_exists?
           file.gsub!("./", "")
           @abs_path = Dir.pwd + "/" + file
-          raise Errors::MESSAGE[:invalid_file] if Dir[abs_path].blank?
+          raise InvalidArgumentError, "Input file does not exists!!" if Dir[abs_path].blank?
         end
 
         def validate_number_of_throws
           values = players.values
           values.each do |v|
             if !v.include?(10)
-              raise Errors::MESSAGE[:invalid_number_of_throws] unless v.size == 20
+              raise InvalidArgumentError, "Please enter the right number of throws per player" unless v.size == 20
             else
-              raise Errors::MESSAGE[:invalid_number_of_throws] unless sum_throws(v)
+              raise InvalidArgumentError, "Please enter the right number of throws per player" unless sum_throws(v)
             end
           end
         end
@@ -82,7 +84,9 @@ module Pinbowling
         end
 
         def valid_number?(num)
-          raise Errors::MESSAGE[:invalid_knocked_pin_number] unless (0..10).include?(num)
+          unless (0..10).include?(num)
+            raise InvalidArgumentError, "Negative numbers nor greater than 10 for knocked down pins are not allowed"
+          end
         end
       end
     end

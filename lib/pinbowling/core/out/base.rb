@@ -5,10 +5,13 @@ require "awesome_print"
 module Pinbowling
   module Core
     module Out
-      # Print
+      # Base
       #
-      # Prints the score_table to the user with the palyers
-      # scores and total results for one game.
+      # This is the Base class for printing the score_table to the user
+      # any class that wants to print the score_table to the user
+      # must implement the perform method and implement their own
+      # implementation of this method. This adds the ability to add multiple
+      # classes that print the score_table in different ways.
       class Base
         class << self
           def pretty(score_table)
