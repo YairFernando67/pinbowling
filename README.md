@@ -25,6 +25,8 @@
 
 </p>
 
+If you are new playing this game check out this [video](https://www.youtube.com/watch?v=aBe71sD8o8c)
+
 ## Installation
 
 You can install this gem using [specific_install](https://github.com/rdp/specific_install)
