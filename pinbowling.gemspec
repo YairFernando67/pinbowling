@@ -30,11 +30,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "activesupport", "~>6.0"
-  spec.add_dependency "awesome_print"
-  spec.add_dependency "dry-container"
-  spec.add_dependency "pry"
-  spec.add_dependency "thor"
-  spec.add_dependency "zeitwerk"
+  spec.add_dependency "dry-container", "~> 0.7.2"
+  spec.add_dependency "pry", "~> 0.14.1"
+  spec.add_dependency "thor", "~> 1.1"
+  spec.add_dependency "zeitwerk", "~> 2.4", ">= 2.4.2"
 
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rubocop", "0.77.0"
