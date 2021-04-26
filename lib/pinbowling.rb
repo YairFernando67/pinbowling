@@ -1,5 +1,4 @@
 require "active_support/all"
-require "oj"
 require "dry/container"
 require "thor"
 require "parallel"

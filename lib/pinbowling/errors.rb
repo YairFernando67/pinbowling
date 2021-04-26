@@ -9,7 +9,3 @@ module Pinbowling
     }
   end
 end
-
-
-# Handle invalid score value example 6 and then 6. that should not be allowed.
-# Handle invalid number of throws
