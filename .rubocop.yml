@@ -54,10 +54,10 @@ Style/BracesAroundHashParameters:
   EnforcedStyle: no_braces
 
 Metrics/AbcSize:
-  Max: 40
+  Max: 60
 
 Metrics/MethodLength:
-  Max: 15
+  Max: 16
   Exclude:
     - "spec/**/*.rb"
     - "migrate/*.rb"

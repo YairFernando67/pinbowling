@@ -1,5 +1,9 @@
-module Pinbowling
+# frozen_string_literal: true
 
+module Pinbowling
+  # Main
+  #
+  # This is entrypoint for the Pinbowling game
   class Main < Thor
     check_unknown_options!
     def self.exit_on_failure?
@@ -14,13 +18,13 @@ module Pinbowling
     end
 
     register Support::Instructions,
-              "support",
-              "support",
-              "Support"
+             "support",
+             "support",
+             "Support"
 
     register Game::Module,
-              "game",
-              "game",
-              "Pinbowling Game"
+             "game",
+             "game",
+             "Pinbowling Game"
   end
 end

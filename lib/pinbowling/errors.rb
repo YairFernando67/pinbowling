@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Pinbowling
   module Errors
     MESSAGE = {
@@ -6,6 +8,6 @@ module Pinbowling
       invalid_players: "Unable to calculate score table without any players",
       invalid_score_table: "Unable to print the score table without any players",
       invalid_number_of_throws: "Please enter the right number of throws per player"
-    }
+    }.freeze
   end
 end

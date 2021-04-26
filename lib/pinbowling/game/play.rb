@@ -1,5 +1,11 @@
+# frozen_string_literal: true
+
 module Pinbowling
   module Game
+    # Play
+    #
+    # This class contains one class option [play] that will
+    # take a file name as an argument in order to start a new game
     class Play < Thor::Group
       include Thor::Actions
 

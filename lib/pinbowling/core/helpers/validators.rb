@@ -1,8 +1,13 @@
+# frozen_string_literal: true
+
 module Pinbowling
   module Core
     module Helpers
+      # Validators
+      #
+      # Runs a set of validations over the file to see if the
+      # content is valid.
       class Validators
-
         class << self
           def run(file)
             i = new(file.dup)
@@ -29,7 +34,7 @@ module Pinbowling
         def file_exists?
           file.gsub!("./", "")
           @abs_path = Dir.pwd + "/" + file
-          raise Errors::MESSAGE[:invalid_file] unless !Dir[abs_path].blank?
+          raise Errors::MESSAGE[:invalid_file] if Dir[abs_path].blank?
         end
 
         def validate_number_of_throws
@@ -43,17 +48,18 @@ module Pinbowling
           end
         end
 
-        def sum_throws(v)
-          return true if v.all?(10)
+        def sum_throws(val)
+          return true if val.all?(10)
+
           sum = 0
-          v.each do |n|
-            if n != 10
-              sum += 1
-            else
-              sum += 2
-            end
+          val.each do |n|
+            sum += if n != 10
+                     1
+                   else
+                     2
+                   end
           end
-          sum == 21 || sum == 22
+          [22, 21].include? sum
         end
 
         def validate_throws_are_valid_numbers
@@ -62,7 +68,7 @@ module Pinbowling
           @players = players.each.with_object({}) do |p, memo|
             record = p.split
             value = parse_record(record[1])
-            is_valid_number?(value)
+            valid_number?(value)
             if memo[record[0]]
               memo[record[0]] << value
             else
@@ -75,7 +81,7 @@ module Pinbowling
           record == "F" ? 0 : record.to_i
         end
 
-        def is_valid_number?(num)
+        def valid_number?(num)
           raise Errors::MESSAGE[:invalid_knocked_pin_number] unless (0..10).include?(num)
         end
       end

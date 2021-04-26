@@ -1,4 +1,6 @@
-require 'pry'
+# frozen_string_literal: true
+
+require "pry"
 
 RSpec.describe Pinbowling do
   it "contains a valid version" do

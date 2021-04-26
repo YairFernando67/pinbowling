@@ -1,8 +1,9 @@
-require 'spec_helper'
-require 'pry'
+# frozen_string_literal: true
+
+require "spec_helper"
+require "pry"
 
 RSpec.describe Pinbowling::Core::Helpers::Validators do
-
   subject { described_class.run(file) }
 
   describe ".run" do
@@ -11,6 +12,5 @@ RSpec.describe Pinbowling::Core::Helpers::Validators do
     it "builds the players hash successfully" do
       expect(subject).to be {}
     end
-
   end
 end
