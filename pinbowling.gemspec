@@ -29,15 +29,11 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "activesupport", "~>6.0"
   spec.add_dependency "dry-container"
-  spec.add_dependency "oj"
-  spec.add_dependency "parallel"
   spec.add_dependency "pry"
-  spec.add_dependency "rainbow"
   spec.add_dependency "thor"
   spec.add_dependency "zeitwerk"
   spec.add_dependency "awesome_print"
 
-  spec.add_development_dependency "aruba"
   spec.add_development_dependency "rake"
   spec.add_development_dependency "rubocop", "0.77.0"
 end

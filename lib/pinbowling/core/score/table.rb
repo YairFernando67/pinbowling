@@ -21,6 +21,10 @@ module Pinbowling
           i = 0
           players.each do |e, scores|
             @game = score_table[e]
+            # if scores.all?(0)
+            #   @game[:pinfalls] = Array.new(10, [0,0])
+            #   next
+            # end
             scores.each.with_index do |s, idx|
               if s == 10
                 update_pinfalls_and_score_when_strike(s, scores, idx, i)
@@ -40,7 +44,13 @@ module Pinbowling
                   update_prev_score
                 else
                   update_prev_score(s)
-                  game[:pinfalls][i] = [s, ""]
+                  if i == 10
+                    if game[:pinfalls][i-1].sum == 10 || game[:pinfalls][i-1].include?("/")
+                      game[:pinfalls][i] = [s, ""]
+                    end
+                  else
+                    game[:pinfalls][i] = [s, ""]
+                  end
                 end
               end
               i +=1 if game[:prev_score].nil?
@@ -72,7 +82,7 @@ module Pinbowling
 
         def update_pinfalls_and_score_when_strike(s, scores, idx, i)
           if i == 9
-            game[:pinfalls][i] = ["X", scores[idx+1], scores[idx+2]]
+            game[:pinfalls][i] = ["X", is_strike?(scores[idx+1]), is_strike?(scores[idx+2])]
           else
             game[:pinfalls][i] = ["", "X"]
           end
@@ -98,6 +108,10 @@ module Pinbowling
                                 player: n
                               }
           end
+        end
+
+        def is_strike?(val)
+          val == 10 ? "X" : val
         end
       end
     end
