@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    pinbowling (0.1.4)
+    pinbowling (0.2.1)
       activesupport (~> 6.0)
       awesome_print
       dry-container

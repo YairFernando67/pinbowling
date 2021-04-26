@@ -84,9 +84,9 @@ module Pinbowling
         end
 
         def valid_number?(num)
-          unless (0..10).include?(num)
-            raise InvalidArgumentError, "Negative numbers nor greater than 10 for knocked down pins are not allowed"
-          end
+          return if (0..10).include?(num)
+
+          raise InvalidArgumentError, "Negative numbers nor greater than 10 for knocked down pins are not allowed"
         end
       end
     end

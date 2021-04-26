@@ -1,28 +1,64 @@
-# Pinbowling
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pinbowling`. To experiment with that code, run `bin/console` for an interactive prompt.
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![LinkedIn][linkedin-shield2]][linkedin-url2]
+[![Hireable][hireable]][hireable-url]
 
-TODO: Delete this and the text above, and describe your gem
+<br />
+<p align="center">
+ <h2 align="center">Pinbowling</h2>
+
+  <p align="center">
+    Ruby command line application to play pinbowling game.
+    <br />
+    <a href="https://github.com/YairFernando67/pinbowling"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/YairFernando67/pinbowling">View demo</a>
+    ·
+    <a href="https://github.com/YairFernando67/pinbowling/issues">Report bug</a>
+    ·
+    <a href="https://github.com/YairFernando67/pinbowling/issues">Request feature</a>
+  </p>
+
+</p>
 
 ## Installation
 
-Add this line to your application's Gemfile:
+You can install this gem using [specific_install](https://github.com/rdp/specific_install)
+
 
 ```ruby
-gem "pinbowling"
+$ gem install specific_install
 ```
 
-And then execute:
-
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install pinbowling
+Then run this command to install pinbowling gem
+```ruby
+gem specific_install -l https://github.com/YairFernando67/pinbowling.git
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+### Check version
+After installing you can check the version
+```ruby
+$ pinbowling -v
+```
+### Read instructions
+Before you start playing check out the instructions using the support command
+```ruby
+$ pinbowling support play
+```
+### Start a game
+Provide a .txt file with your players and scores and run the following command to see the results.
+```ruby
+$ pinbowling game play input.txt
+```
+
+
+![Screenshot Image](game.png)
 
 ## Development
 
@@ -42,3 +78,22 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Pinbowling project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/pinbowling/blob/master/CODE_OF_CONDUCT.md).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+[contributors-shield]: https://img.shields.io/github/contributors/YairFernando67/pinbowling.svg?style=flat-square
+[contributors-url]: https://github.com/YairFernando67/pinbowling/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/YairFernando67/pinbowling.svg?style=flat-square
+[forks-url]: https://github.com/YairFernando67/pinbowling/network/members
+[stars-shield]: https://img.shields.io/github/stars/YairFernando67/pinbowling.svg?style=flat-square
+[stars-url]: https://github.com/YairFernando67/pinbowling/stargazers
+[issues-shield]: https://img.shields.io/github/issues/YairFernando67/pinbowling.svg?style=flat-square
+[issues-url]: https://github.com/YairFernando67/pinbowling/issues
+[license-shield]: https://img.shields.io/github/license/YairFernando67/pinbowling.svg?style=flat-square
+[license-url]: https://github.com/YairFernando67/pinbowling/blob/master/LICENSE.txt
+[linkedin-shield2]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url2]: https://www.linkedin.com/in/softwaredeveloperyairfacio/
+[hireable]: https://cdn.rawgit.com/hiendv/hireable/master/styles/flat/yes.svg
+[hireable-url]: https://www.linkedin.com/in/softwaredeveloperyairfacio/
